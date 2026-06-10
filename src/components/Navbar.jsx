@@ -1,36 +1,40 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Heart, Menu, X } from 'lucide-react';
+import { Cpu, Menu, X, Activity } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed w-full z-50 glassmorphism bg-white/80 transition-all duration-300">
+    <nav className="fixed w-full z-50 bg-[#020617]/80 backdrop-blur-xl border-b border-cyan-900/50 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="p-2 bg-primary-100 rounded-full">
-              <Heart className="w-6 h-6 text-primary-600 fill-primary-600" />
+          <Link to="/" className="flex items-center space-x-3 group">
+            <div className="relative flex items-center justify-center w-10 h-10">
+              <div className="absolute inset-0 bg-cyan-500/20 rounded-lg transform rotate-45 group-hover:rotate-90 transition-transform duration-500" />
+              <div className="absolute inset-0 border border-cyan-500/50 rounded-lg transform -rotate-45 group-hover:rotate-0 transition-transform duration-500" />
+              <Cpu className="w-5 h-5 text-cyan-400 relative z-10" />
             </div>
-            <span className="font-bold text-xl text-slate-800 tracking-tight">
-              Soul<span className="text-primary-600">Sync</span>
+            <span className="font-bold text-xl text-white tracking-widest font-mono uppercase">
+              Soul<span className="text-cyan-400">Sync</span>
             </span>
           </Link>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#features" className="text-slate-600 hover:text-primary-600 transition-colors font-medium">Features</a>
-            <a href="#how-it-works" className="text-slate-600 hover:text-primary-600 transition-colors font-medium">How it Works</a>
-            <a href="#testimonials" className="text-slate-600 hover:text-primary-600 transition-colors font-medium">Stories</a>
-            <div className="flex items-center space-x-4">
-              <Link to="/login" className="text-primary-600 font-medium hover:text-primary-700 transition-colors">
-                Login
+            <a href="#features" className="text-slate-300 hover:text-cyan-400 transition-colors font-mono text-sm uppercase tracking-wider">Capabilities</a>
+            <a href="#how-it-works" className="text-slate-300 hover:text-cyan-400 transition-colors font-mono text-sm uppercase tracking-wider">Protocol</a>
+            <a href="#testimonials" className="text-slate-300 hover:text-cyan-400 transition-colors font-mono text-sm uppercase tracking-wider">Data Logs</a>
+            
+            <div className="flex items-center space-x-4 pl-4 border-l border-cyan-900/50">
+              <Link to="/login" className="text-cyan-400 font-mono text-sm uppercase tracking-widest hover:text-cyan-300 transition-colors">
+                [ Connect ]
               </Link>
-              <Link to="/register" className="bg-primary-600 text-white px-6 py-2.5 rounded-full font-medium hover:bg-primary-700 hover:shadow-lg hover:shadow-primary-600/20 transition-all transform hover:-translate-y-0.5">
-                Get Started
+              <Link to="/register" className="bg-cyan-500/10 border border-cyan-500/50 text-cyan-400 px-6 py-2 rounded-sm font-mono text-sm uppercase tracking-widest hover:bg-cyan-500/20 hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(34,211,238,0.3)] transition-all flex items-center space-x-2">
+                <Activity className="w-4 h-4" />
+                <span>Initialize</span>
               </Link>
             </div>
           </div>
@@ -39,7 +43,7 @@ const Navbar = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-slate-600 hover:text-primary-600 focus:outline-none"
+              className="text-cyan-400 hover:text-cyan-300 focus:outline-none"
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -54,18 +58,18 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-t border-slate-100"
+            className="md:hidden bg-[#0b1121] border-t border-cyan-900/50 font-mono"
           >
-            <div className="px-4 pt-2 pb-6 space-y-4 shadow-xl">
-              <a href="#features" className="block px-3 py-2 text-slate-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg font-medium">Features</a>
-              <a href="#how-it-works" className="block px-3 py-2 text-slate-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg font-medium">How it Works</a>
-              <a href="#testimonials" className="block px-3 py-2 text-slate-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg font-medium">Stories</a>
-              <div className="pt-4 border-t border-slate-100 flex flex-col space-y-3">
-                <Link to="/login" className="block w-full text-center text-primary-600 font-medium py-2 hover:bg-primary-50 rounded-lg">
-                  Login
+            <div className="px-4 pt-4 pb-6 space-y-4">
+              <a href="#features" className="block px-3 py-2 text-slate-300 hover:text-cyan-400 hover:bg-cyan-950/50 rounded-lg uppercase tracking-wider text-sm">Capabilities</a>
+              <a href="#how-it-works" className="block px-3 py-2 text-slate-300 hover:text-cyan-400 hover:bg-cyan-950/50 rounded-lg uppercase tracking-wider text-sm">Protocol</a>
+              <a href="#testimonials" className="block px-3 py-2 text-slate-300 hover:text-cyan-400 hover:bg-cyan-950/50 rounded-lg uppercase tracking-wider text-sm">Data Logs</a>
+              <div className="pt-4 border-t border-cyan-900/50 flex flex-col space-y-3">
+                <Link to="/login" className="block w-full text-center text-cyan-400 py-2 hover:bg-cyan-950/50 rounded-lg uppercase tracking-widest text-sm">
+                  [ Connect ]
                 </Link>
-                <Link to="/register" className="block w-full text-center bg-primary-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-primary-700 shadow-md">
-                  Get Started
+                <Link to="/register" className="block w-full text-center bg-cyan-500/10 border border-cyan-500/50 text-cyan-400 px-6 py-3 rounded-lg uppercase tracking-widest text-sm hover:bg-cyan-500/20">
+                  Initialize Bond
                 </Link>
               </div>
             </div>

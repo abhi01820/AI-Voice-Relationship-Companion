@@ -7,7 +7,7 @@ import Footer from './components/Footer';
 function App() {
   return (
     <Router>
-      <div className="flex flex-col min-h-screen bg-slate-50 overflow-x-hidden">
+      <div className="flex flex-col min-h-screen bg-[#020617] text-slate-50 overflow-x-hidden selection:bg-cyan-500/30 selection:text-cyan-200">
         <Navbar />
         <main className="flex-grow">
           <Routes>
