@@ -24,17 +24,17 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#features" className="text-slate-300 hover:text-cyan-400 transition-colors font-mono text-sm uppercase tracking-wider">Capabilities</a>
-            <a href="#how-it-works" className="text-slate-300 hover:text-cyan-400 transition-colors font-mono text-sm uppercase tracking-wider">Protocol</a>
-            <a href="#testimonials" className="text-slate-300 hover:text-cyan-400 transition-colors font-mono text-sm uppercase tracking-wider">Data Logs</a>
+            <a href="#features" className="text-slate-300 hover:text-cyan-400 transition-colors font-mono text-sm uppercase tracking-wider">Features</a>
+            <a href="#how-it-works" className="text-slate-300 hover:text-cyan-400 transition-colors font-mono text-sm uppercase tracking-wider">How it Works</a>
+            <a href="#testimonials" className="text-slate-300 hover:text-cyan-400 transition-colors font-mono text-sm uppercase tracking-wider">Stories</a>
             
             <div className="flex items-center space-x-4 pl-4 border-l border-cyan-900/50">
               <Link to="/login" className="text-cyan-400 font-mono text-sm uppercase tracking-widest hover:text-cyan-300 transition-colors">
-                [ Connect ]
+                Log In
               </Link>
               <Link to="/register" className="bg-cyan-500/10 border border-cyan-500/50 text-cyan-400 px-6 py-2 rounded-sm font-mono text-sm uppercase tracking-widest hover:bg-cyan-500/20 hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(34,211,238,0.3)] transition-all flex items-center space-x-2">
                 <Activity className="w-4 h-4" />
-                <span>Initialize</span>
+                <span>Sign Up</span>
               </Link>
             </div>
           </div>
@@ -61,15 +61,15 @@ const Navbar = () => {
             className="md:hidden bg-[#0b1121] border-t border-cyan-900/50 font-mono"
           >
             <div className="px-4 pt-4 pb-6 space-y-4">
-              <a href="#features" className="block px-3 py-2 text-slate-300 hover:text-cyan-400 hover:bg-cyan-950/50 rounded-lg uppercase tracking-wider text-sm">Capabilities</a>
-              <a href="#how-it-works" className="block px-3 py-2 text-slate-300 hover:text-cyan-400 hover:bg-cyan-950/50 rounded-lg uppercase tracking-wider text-sm">Protocol</a>
-              <a href="#testimonials" className="block px-3 py-2 text-slate-300 hover:text-cyan-400 hover:bg-cyan-950/50 rounded-lg uppercase tracking-wider text-sm">Data Logs</a>
+              <a href="#features" className="block px-3 py-2 text-slate-300 hover:text-cyan-400 hover:bg-cyan-950/50 rounded-lg uppercase tracking-wider text-sm">Features</a>
+              <a href="#how-it-works" className="block px-3 py-2 text-slate-300 hover:text-cyan-400 hover:bg-cyan-950/50 rounded-lg uppercase tracking-wider text-sm">How it Works</a>
+              <a href="#testimonials" className="block px-3 py-2 text-slate-300 hover:text-cyan-400 hover:bg-cyan-950/50 rounded-lg uppercase tracking-wider text-sm">Stories</a>
               <div className="pt-4 border-t border-cyan-900/50 flex flex-col space-y-3">
                 <Link to="/login" className="block w-full text-center text-cyan-400 py-2 hover:bg-cyan-950/50 rounded-lg uppercase tracking-widest text-sm">
-                  [ Connect ]
+                  Log In
                 </Link>
                 <Link to="/register" className="block w-full text-center bg-cyan-500/10 border border-cyan-500/50 text-cyan-400 px-6 py-3 rounded-lg uppercase tracking-widest text-sm hover:bg-cyan-500/20">
-                  Initialize Bond
+                  Sign Up
                 </Link>
               </div>
             </div>

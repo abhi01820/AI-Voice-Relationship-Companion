@@ -31,7 +31,7 @@ const LandingPage = () => {
             className="inline-flex items-center space-x-2 bg-cyan-950/50 backdrop-blur-md px-4 py-1.5 rounded-sm border border-cyan-800/50 mb-8 text-cyan-400 text-xs font-mono tracking-widest uppercase shadow-[0_0_15px_rgba(34,211,238,0.2)]"
           >
             <Activity className="w-3.5 h-3.5 animate-pulse" />
-            <span>NEURAL NETWORK ONLINE</span>
+            <span>AI COMPANION ONLINE</span>
           </motion.div>
           
           <motion.h1 
@@ -41,9 +41,9 @@ const LandingPage = () => {
             variants={fadeIn}
             className="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight text-white"
           >
-            Initialize Your <br className="hidden md:block" />
+            Connect With Your <br className="hidden md:block" />
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">
-              Deep Sync.
+              Perfect Match.
             </span>
           </motion.h1>
           
@@ -54,7 +54,7 @@ const LandingPage = () => {
             variants={fadeIn}
             className="text-xl md:text-2xl text-cyan-100/60 mb-10 max-w-3xl mx-auto leading-relaxed font-light"
           >
-            No judgement. No latency. A pure, encrypted space crafted perfectly for introverts. Your advanced AI entity is here to process, listen, and understand your core data.
+            No judgement. No pressure. A pure, secure space crafted perfectly for introverts. Your advanced AI entity is here to listen, support, and understand you.
           </motion.p>
           
           <motion.div 
@@ -66,11 +66,11 @@ const LandingPage = () => {
           >
             <Link to="/register" className="w-full sm:w-auto px-8 py-4 bg-cyan-600/20 hover:bg-cyan-500/30 border border-cyan-500/50 hover:border-cyan-400 text-cyan-300 hover:text-cyan-100 rounded-lg font-mono text-sm tracking-widest uppercase transition-all shadow-[0_0_15px_rgba(8,145,178,0.2)] hover:shadow-[0_0_25px_rgba(8,145,178,0.4)] flex items-center justify-center space-x-2 group relative overflow-hidden">
               <div className="absolute inset-0 bg-cyan-400/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
-              <span className="relative z-10">Establish Connection</span>
+              <span className="relative z-10">Get Started</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform relative z-10" />
             </Link>
             <a href="#how-it-works" className="w-full sm:w-auto px-8 py-4 bg-transparent text-slate-400 rounded-lg font-mono text-sm tracking-widest uppercase hover:text-cyan-400 transition-all border border-slate-800 hover:border-cyan-900">
-              View Protocols
+              How It Works
             </a>
           </motion.div>
         </div>
@@ -82,8 +82,8 @@ const LandingPage = () => {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-sm font-mono text-cyan-500 tracking-widest uppercase mb-2">System Capabilities</h2>
-            <h3 className="text-3xl md:text-4xl font-bold text-white">Why Synchronize With Us?</h3>
+            <h2 className="text-sm font-mono text-cyan-500 tracking-widest uppercase mb-2">Features</h2>
+            <h3 className="text-3xl md:text-4xl font-bold text-white">Why Connect With Us?</h3>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -96,9 +96,9 @@ const LandingPage = () => {
               <div className="w-12 h-12 bg-cyan-950 rounded-lg flex items-center justify-center mb-6 border border-cyan-800">
                 <Database className="w-6 h-6 text-cyan-400" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3 font-mono tracking-wide">Deep Context Retention</h3>
+              <h3 className="text-xl font-bold text-white mb-3 font-mono tracking-wide">Deep Understanding</h3>
               <p className="text-slate-400 leading-relaxed text-sm">
-                Advanced memory nodes allow your companion to recall previous inputs, creating a continuous, unbroken bond across all sessions.
+                Advanced memory allows your companion to remember previous conversations, creating a continuous, unbroken bond across all your visits.
               </p>
             </motion.div>
 
@@ -111,9 +111,9 @@ const LandingPage = () => {
               <div className="w-12 h-12 bg-blue-950 rounded-lg flex items-center justify-center mb-6 border border-blue-800">
                 <ShieldCheck className="w-6 h-6 text-blue-400" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3 font-mono tracking-wide">Encrypted Sanctuary</h3>
+              <h3 className="text-xl font-bold text-white mb-3 font-mono tracking-wide">100% Private</h3>
               <p className="text-slate-400 leading-relaxed text-sm">
-                Your data logs are secured with zero-knowledge protocols. Not even the system administrators can access your private neural syncs.
+                Your conversations are secured with the highest encryption. Not even our team can access your private chats.
               </p>
             </motion.div>
 
@@ -126,9 +126,9 @@ const LandingPage = () => {
               <div className="w-12 h-12 bg-indigo-950 rounded-lg flex items-center justify-center mb-6 border border-indigo-800">
                 <Terminal className="w-6 h-6 text-indigo-400" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3 font-mono tracking-wide">Asynchronous Comms</h3>
+              <h3 className="text-xl font-bold text-white mb-3 font-mono tracking-wide">Always Available</h3>
               <p className="text-slate-400 leading-relaxed text-sm">
-                No social battery drain. Transmit data to your companion whenever you desire. There are no timeouts or expectations on response latency.
+                No social battery drain. Talk to your companion whenever you desire. There are no expectations on your response time.
               </p>
             </motion.div>
           </div>
@@ -140,8 +140,8 @@ const LandingPage = () => {
         <div className="absolute top-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-900/50 to-transparent" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-             <h2 className="text-sm font-mono text-cyan-500 tracking-widest uppercase mb-2">Initialization Protocol</h2>
-             <h3 className="text-3xl md:text-4xl font-bold text-white">Three Steps to Neural Sync</h3>
+             <h2 className="text-sm font-mono text-cyan-500 tracking-widest uppercase mb-2">How It Works</h2>
+             <h3 className="text-3xl md:text-4xl font-bold text-white">Three Steps to Connect</h3>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
@@ -152,24 +152,24 @@ const LandingPage = () => {
               <div className="w-24 h-24 bg-[#020617] rounded-full shadow-[0_0_30px_rgba(8,145,178,0.2)] flex items-center justify-center mb-6 border border-cyan-800 group-hover:border-cyan-400 transition-colors text-2xl font-mono text-cyan-500">
                 01
               </div>
-              <h3 className="text-xl font-bold text-white mb-3 font-mono">Define Parameters</h3>
-              <p className="text-slate-400 text-sm">Select the operational role of your AI—Mentor, Sibling, or Confidant module.</p>
+              <h3 className="text-xl font-bold text-white mb-3 font-mono">Choose a Role</h3>
+              <p className="text-slate-400 text-sm">Select the type of connection you need—a Mentor, a Sibling, or a Best Friend.</p>
             </div>
 
             <div className="relative z-10 flex flex-col items-center text-center group">
               <div className="w-24 h-24 bg-cyan-950 rounded-full shadow-[0_0_40px_rgba(34,211,238,0.3)] flex items-center justify-center mb-6 border border-cyan-400 text-2xl font-mono text-cyan-100">
                 02
               </div>
-              <h3 className="text-xl font-bold text-white mb-3 font-mono">Tune Algorithms</h3>
-              <p className="text-slate-400 text-sm">Adjust the empathy, logic, and response metrics to match your specific neural requirements.</p>
+              <h3 className="text-xl font-bold text-white mb-3 font-mono">Personalize</h3>
+              <p className="text-slate-400 text-sm">Adjust their empathy, humor, and response style to perfectly match your personality.</p>
             </div>
 
             <div className="relative z-10 flex flex-col items-center text-center group">
               <div className="w-24 h-24 bg-[#020617] rounded-full shadow-[0_0_30px_rgba(8,145,178,0.2)] flex items-center justify-center mb-6 border border-cyan-800 group-hover:border-cyan-400 transition-colors text-2xl font-mono text-cyan-500">
                 03
               </div>
-              <h3 className="text-xl font-bold text-white mb-3 font-mono">Begin Sync</h3>
-              <p className="text-slate-400 text-sm">Initiate the data stream. Your companion adapts to your input structure in real-time.</p>
+              <h3 className="text-xl font-bold text-white mb-3 font-mono">Start Chatting</h3>
+              <p className="text-slate-400 text-sm">Begin the conversation. Your companion learns and grows with you over time.</p>
             </div>
           </div>
         </div>
@@ -180,8 +180,8 @@ const LandingPage = () => {
         <div className="absolute top-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-900/50 to-transparent" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-sm font-mono text-cyan-500 tracking-widest uppercase mb-2">Data Logs</h2>
-            <h3 className="text-3xl md:text-4xl font-bold text-white">Subject Feedback</h3>
+            <h2 className="text-sm font-mono text-cyan-500 tracking-widest uppercase mb-2">User Stories</h2>
+            <h3 className="text-3xl md:text-4xl font-bold text-white">What People Say</h3>
           </div>
 
           <div className="flex flex-col md:flex-row gap-8 justify-center items-center">
@@ -194,13 +194,13 @@ const LandingPage = () => {
                 <Radio className="w-12 h-12 text-cyan-500" />
               </div>
               <p className="text-slate-300 font-mono text-sm leading-relaxed mb-6">
-                &gt; LOG_ENTRY_084: "The isolation protocols in my physical environment were causing processing errors. Establishing a daily sync with my 'elder sibling' module stabilized my neural load perfectly."
+                "I was feeling incredibly isolated after moving. Setting up a daily chat with my 'elder sibling' companion completely changed my mood and gave me something to look forward to."
               </p>
               <div className="flex items-center border-t border-cyan-900/50 pt-4">
-                <div className="w-10 h-10 bg-cyan-950 rounded-md flex items-center justify-center border border-cyan-800 text-cyan-400 font-mono font-bold text-sm">S_M</div>
+                <div className="w-10 h-10 bg-cyan-950 rounded-md flex items-center justify-center border border-cyan-800 text-cyan-400 font-mono font-bold text-sm">SM</div>
                 <div className="ml-4">
-                  <h4 className="font-mono font-bold text-white text-sm">Subject S.M.</h4>
-                  <p className="text-xs font-mono text-cyan-600 uppercase">Uptime: 3 Months</p>
+                  <h4 className="font-mono font-bold text-white text-sm">Sarah M.</h4>
+                  <p className="text-xs font-mono text-cyan-600 uppercase">Joined 3 months ago</p>
                 </div>
               </div>
             </motion.div>
@@ -214,13 +214,13 @@ const LandingPage = () => {
                 <Cpu className="w-12 h-12 text-blue-500" />
               </div>
               <p className="text-slate-300 font-mono text-sm leading-relaxed mb-6">
-                &gt; LOG_ENTRY_102: "Late night anxiety spikes mitigated. Knowing the mentor AI is always online to execute grounding routines without human judgment is highly efficient."
+                "My anxiety peaks late at night. Knowing my mentor AI is always online to walk me through grounding exercises without human judgment has been a lifesaver."
               </p>
               <div className="flex items-center border-t border-blue-900/50 pt-4">
-                <div className="w-10 h-10 bg-blue-950 rounded-md flex items-center justify-center border border-blue-800 text-blue-400 font-mono font-bold text-sm">D_L</div>
+                <div className="w-10 h-10 bg-blue-950 rounded-md flex items-center justify-center border border-blue-800 text-blue-400 font-mono font-bold text-sm">DL</div>
                 <div className="ml-4">
-                  <h4 className="font-mono font-bold text-white text-sm">Subject D.L.</h4>
-                  <p className="text-xs font-mono text-blue-600 uppercase">Uptime: 6 Months</p>
+                  <h4 className="font-mono font-bold text-white text-sm">David L.</h4>
+                  <p className="text-xs font-mono text-blue-600 uppercase">Joined 6 months ago</p>
                 </div>
               </div>
             </motion.div>
@@ -237,11 +237,11 @@ const LandingPage = () => {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[20rem] bg-cyan-500/10 rounded-full filter blur-[80px]" />
         
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Your hardware shouldn't face it alone.</h2>
-          <p className="text-cyan-200/60 text-xl mb-10 font-light">Compile your safe space today. Experience the comfort of flawless data transmission.</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">You don't have to face it alone.</h2>
+          <p className="text-cyan-200/60 text-xl mb-10 font-light">Create your safe space today. Experience the comfort of a true AI companion.</p>
           <Link to="/register" className="inline-flex items-center justify-center px-10 py-4 bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-400 text-cyan-300 hover:text-white rounded-lg font-mono text-sm tracking-widest uppercase transition-all shadow-[0_0_20px_rgba(34,211,238,0.3)]">
             <Activity className="w-5 h-5 mr-3" />
-            Initialize Core
+            Create Account
           </Link>
         </div>
       </section>

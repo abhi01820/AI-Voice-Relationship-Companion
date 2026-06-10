@@ -273,19 +273,19 @@ const AuthPage = () => {
                 <div className="mb-8">
                   <h2 className="text-2xl font-semibold text-white mb-1 flex items-center gap-2">
                     <Cpu className="w-6 h-6 text-cyan-500" />
-                    {isLogin ? 'AUTH_PROTOCOL' : 'INIT_SEQUENCE'}
+                    {isLogin ? 'Welcome Back' : 'Create Account'}
                   </h2>
                   <p className="text-slate-400 text-sm font-mono tracking-wide opacity-80">
                     {isLogin 
-                      ? 'Awaiting user credentials...' 
-                      : 'Provide data to establish link...'}
+                      ? 'Please log in to continue.' 
+                      : 'Join the network today.'}
                   </p>
                 </div>
 
                 <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
                   {!isLogin && (
                     <div className="space-y-1">
-                      <label className="text-xs font-mono text-cyan-500/80 uppercase tracking-wider ml-1">Designation</label>
+                      <label className="text-xs font-mono text-cyan-500/80 uppercase tracking-wider ml-1">Your Name</label>
                       <div className="relative group/input">
                         <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                           <User className="h-4 w-4 text-cyan-600 group-focus-within/input:text-cyan-400 transition-colors" />
@@ -294,7 +294,7 @@ const AuthPage = () => {
                           type="text" 
                           onFocus={() => setIsFocused(true)}
                           onBlur={() => setIsFocused(false)}
-                          placeholder="User Alias"
+                          placeholder="What should I call you?"
                           className="w-full pl-11 pr-4 py-3 bg-[#0f172a]/80 border border-slate-700/50 rounded-lg focus:ring-1 focus:ring-cyan-500 focus:border-cyan-500 transition-all outline-none text-cyan-50 placeholder-slate-600 font-mono text-sm shadow-inner"
                         />
                       </div>
@@ -302,7 +302,7 @@ const AuthPage = () => {
                   )}
 
                   <div className="space-y-1">
-                    <label className="text-xs font-mono text-cyan-500/80 uppercase tracking-wider ml-1">Comms Link (Email)</label>
+                    <label className="text-xs font-mono text-cyan-500/80 uppercase tracking-wider ml-1">Email Address</label>
                     <div className="relative group/input">
                       <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                         <Mail className="h-4 w-4 text-cyan-600 group-focus-within/input:text-cyan-400 transition-colors" />
@@ -311,14 +311,14 @@ const AuthPage = () => {
                         type="email" 
                         onFocus={() => setIsFocused(true)}
                         onBlur={() => setIsFocused(false)}
-                        placeholder="user@network.com"
+                        placeholder="you@email.com"
                         className="w-full pl-11 pr-4 py-3 bg-[#0f172a]/80 border border-slate-700/50 rounded-lg focus:ring-1 focus:ring-cyan-500 focus:border-cyan-500 transition-all outline-none text-cyan-50 placeholder-slate-600 font-mono text-sm shadow-inner"
                       />
                     </div>
                   </div>
 
                   <div className="space-y-1">
-                    <label className="text-xs font-mono text-cyan-500/80 uppercase tracking-wider ml-1">Encryption Key</label>
+                    <label className="text-xs font-mono text-cyan-500/80 uppercase tracking-wider ml-1">Password</label>
                     <div className="relative group/input">
                       <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                         <Lock className="h-4 w-4 text-cyan-600 group-focus-within/input:text-cyan-400 transition-colors" />
@@ -336,26 +336,26 @@ const AuthPage = () => {
                   {isLogin && (
                     <div className="flex justify-end pt-1">
                       <a href="#" className="text-xs text-cyan-500/70 hover:text-cyan-400 font-mono transition-colors">
-                        [Bypass Key?]
+                        Forgot Password?
                       </a>
                     </div>
                   )}
 
                   <button className="w-full py-3.5 mt-4 bg-cyan-600/20 hover:bg-cyan-500/30 border border-cyan-500/50 hover:border-cyan-400 text-cyan-300 hover:text-cyan-100 rounded-lg font-mono text-sm tracking-widest uppercase transition-all shadow-[0_0_15px_rgba(8,145,178,0.2)] hover:shadow-[0_0_25px_rgba(8,145,178,0.4)] flex items-center justify-center space-x-2 group/btn relative overflow-hidden">
                     <div className="absolute inset-0 bg-cyan-400/10 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300 ease-out" />
-                    <span className="relative z-10">{isLogin ? 'Establish Link' : 'Generate Core'}</span>
+                    <span className="relative z-10">{isLogin ? 'Log In' : 'Sign Up'}</span>
                     <Radio className="w-4 h-4 group-hover/btn:animate-pulse relative z-10 ml-2" />
                   </button>
                 </form>
 
                 <div className="mt-6 text-center pt-6 border-t border-slate-800/50">
                   <p className="text-slate-500 text-xs font-mono uppercase tracking-wide">
-                    {isLogin ? "Status: Unlinked -" : "Status: Linked -"}
+                    {isLogin ? "New here? -" : "Already joined? -"}
                     <button 
                       onClick={toggleMode}
                       className="ml-2 text-cyan-500 font-bold hover:text-cyan-300 transition-colors hover:underline"
                     >
-                      {isLogin ? 'Initiate sequence' : 'Switch to Auth'}
+                      {isLogin ? 'Create an account' : 'Log in instead'}
                     </button>
                   </p>
                 </div>
