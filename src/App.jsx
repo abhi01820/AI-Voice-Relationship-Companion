@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
+import AuthPage from './pages/AuthPage';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
@@ -11,7 +12,8 @@ function App() {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<LandingPage />} />
-            {/* Future routes will be added here */}
+            <Route path="/login" element={<AuthPage />} />
+            <Route path="/register" element={<AuthPage />} />
           </Routes>
         </main>
         <Footer />
