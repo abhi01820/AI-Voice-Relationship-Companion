@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
 import AuthPage from './pages/AuthPage';
+import DashboardPage from './pages/DashboardPage';
+import ChatPage from './pages/ChatPage';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
@@ -14,6 +16,8 @@ function App() {
             <Route path="/" element={<LandingPage />} />
             <Route path="/login" element={<AuthPage />} />
             <Route path="/register" element={<AuthPage />} />
+            <Route path="/dashboard" element={<DashboardPage />} />
+            <Route path="/chat/:companionId" element={<ChatPage />} />
           </Routes>
         </main>
         <Footer />

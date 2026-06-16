@@ -64,7 +64,7 @@ const LandingPage = () => {
             variants={fadeIn}
             className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6"
           >
-            <Link to="/register" className="w-full sm:w-auto px-8 py-4 bg-cyan-600/20 hover:bg-cyan-500/30 border border-cyan-500/50 hover:border-cyan-400 text-cyan-300 hover:text-cyan-100 rounded-lg font-mono text-sm tracking-widest uppercase transition-all shadow-[0_0_15px_rgba(8,145,178,0.2)] hover:shadow-[0_0_25px_rgba(8,145,178,0.4)] flex items-center justify-center space-x-2 group relative overflow-hidden">
+            <Link to="/dashboard" className="w-full sm:w-auto px-8 py-4 bg-cyan-600/20 hover:bg-cyan-500/30 border border-cyan-500/50 hover:border-cyan-400 text-cyan-300 hover:text-cyan-100 rounded-lg font-mono text-sm tracking-widest uppercase transition-all shadow-[0_0_15px_rgba(8,145,178,0.2)] hover:shadow-[0_0_25px_rgba(8,145,178,0.4)] flex items-center justify-center space-x-2 group relative overflow-hidden">
               <div className="absolute inset-0 bg-cyan-400/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
               <span className="relative z-10">Get Started</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform relative z-10" />
@@ -239,7 +239,7 @@ const LandingPage = () => {
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">You don't have to face it alone.</h2>
           <p className="text-cyan-200/60 text-xl mb-10 font-light">Create your safe space today. Experience the comfort of a true AI companion.</p>
-          <Link to="/register" className="inline-flex items-center justify-center px-10 py-4 bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-400 text-cyan-300 hover:text-white rounded-lg font-mono text-sm tracking-widest uppercase transition-all shadow-[0_0_20px_rgba(34,211,238,0.3)]">
+          <Link to="/dashboard" className="inline-flex items-center justify-center px-10 py-4 bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-400 text-cyan-300 hover:text-white rounded-lg font-mono text-sm tracking-widest uppercase transition-all shadow-[0_0_20px_rgba(34,211,238,0.3)]">
             <Activity className="w-5 h-5 mr-3" />
             Create Account
           </Link>

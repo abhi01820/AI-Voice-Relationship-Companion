@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Mail, Lock, User, Sparkles, ArrowRight, ShieldCheck, Cpu, Radio, Activity } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const TypewriterText = ({ text, onTypingComplete, onTypingStart }) => {
   const [displayText, setDisplayText] = useState('');
@@ -167,10 +167,16 @@ const AICoreVisual = ({ isSpeaking, isFocused }) => {
 
 const AuthPage = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const [isLogin, setIsLogin] = useState(location.pathname === '/login');
   const [greeting, setGreeting] = useState('System Online');
   const [isFocused, setIsFocused] = useState(false);
   const [isSpeaking, setIsSpeaking] = useState(true); // AI is speaking initially
+
+  const handleAuth = (e) => {
+    e.preventDefault();
+    navigate('/dashboard');
+  };
 
   useEffect(() => {
     setIsLogin(location.pathname === '/login');
@@ -282,7 +288,7 @@ const AuthPage = () => {
                   </p>
                 </div>
 
-                <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+                <form className="space-y-5" onSubmit={handleAuth}>
                   {!isLogin && (
                     <div className="space-y-1">
                       <label className="text-xs font-mono text-cyan-500/80 uppercase tracking-wider ml-1">Your Name</label>

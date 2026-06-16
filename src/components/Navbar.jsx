@@ -27,6 +27,7 @@ const Navbar = () => {
             <a href="#features" className="text-slate-300 hover:text-cyan-400 transition-colors font-mono text-sm uppercase tracking-wider">Features</a>
             <a href="#how-it-works" className="text-slate-300 hover:text-cyan-400 transition-colors font-mono text-sm uppercase tracking-wider">How it Works</a>
             <a href="#testimonials" className="text-slate-300 hover:text-cyan-400 transition-colors font-mono text-sm uppercase tracking-wider">Stories</a>
+            <Link to="/dashboard" className="text-slate-300 hover:text-cyan-400 transition-colors font-mono text-sm uppercase tracking-wider">Dashboard</Link>
             
             <div className="flex items-center space-x-4 pl-4 border-l border-cyan-900/50">
               <Link to="/login" className="text-cyan-400 font-mono text-sm uppercase tracking-widest hover:text-cyan-300 transition-colors">
@@ -64,6 +65,7 @@ const Navbar = () => {
               <a href="#features" className="block px-3 py-2 text-slate-300 hover:text-cyan-400 hover:bg-cyan-950/50 rounded-lg uppercase tracking-wider text-sm">Features</a>
               <a href="#how-it-works" className="block px-3 py-2 text-slate-300 hover:text-cyan-400 hover:bg-cyan-950/50 rounded-lg uppercase tracking-wider text-sm">How it Works</a>
               <a href="#testimonials" className="block px-3 py-2 text-slate-300 hover:text-cyan-400 hover:bg-cyan-950/50 rounded-lg uppercase tracking-wider text-sm">Stories</a>
+              <Link to="/dashboard" className="block px-3 py-2 text-slate-300 hover:text-cyan-400 hover:bg-cyan-950/50 rounded-lg uppercase tracking-wider text-sm">Dashboard</Link>
               <div className="pt-4 border-t border-cyan-900/50 flex flex-col space-y-3">
                 <Link to="/login" className="block w-full text-center text-cyan-400 py-2 hover:bg-cyan-950/50 rounded-lg uppercase tracking-widest text-sm">
                   Log In
