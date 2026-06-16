@@ -31,7 +31,7 @@ const DashboardPage = () => {
   const activeCompanion = companions[activeIndex];
 
   return (
-    <div className="relative min-h-screen w-full overflow-hidden flex items-center justify-center font-sans text-slate-50">
+    <div className="relative h-screen w-full overflow-hidden flex flex-col font-sans text-slate-50">
       
       {/* Dynamic Backgrounds (Cross-fading) */}
       {companions.map((comp, idx) => (
@@ -46,25 +46,36 @@ const DashboardPage = () => {
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+CgkJPGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMSIgZmlsbD0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjA1KSIvPgoJPC9zdmc+')] [mask-image:radial-gradient(ellipse_at_center,black,transparent_80%)] opacity-30 z-0 pointer-events-none" />
 
       {/* Header UI overlay */}
-      <div className="absolute top-24 left-0 w-full px-8 flex justify-between items-center z-20 pointer-events-none">
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          className="inline-flex items-center space-x-2 bg-black/40 backdrop-blur-md px-4 py-1.5 rounded-sm border border-slate-700/50 text-slate-300 text-xs font-mono tracking-widest uppercase"
-        >
-          <ShieldCheck className="w-3.5 h-3.5" />
-          <span>Select Identity</span>
-        </motion.div>
+      <div className="absolute top-6 left-0 w-full px-4 sm:px-8 flex justify-between items-center z-30">
+        <Link to="/" className="inline-flex items-center space-x-2 bg-black/40 hover:bg-black/60 transition-colors backdrop-blur-md px-4 py-2 rounded-lg border border-white/10 text-white/80 hover:text-white text-xs font-mono tracking-widest uppercase">
+          <ChevronLeft className="w-4 h-4 -ml-1" />
+          <span>Exit Interface</span>
+        </Link>
         
-        <div className="text-right">
+        <div className="text-right pointer-events-none hidden sm:block">
           <p className="text-sm font-mono tracking-widest uppercase opacity-60">System Core</p>
           <p className="font-bold tracking-widest">AWAITING CONNECTION</p>
         </div>
       </div>
 
       {/* Main Carousel Area */}
-      <div className="relative w-full max-w-7xl mx-auto h-[600px] flex items-center justify-center z-10 perspective-1000">
+      <div className="flex-1 relative w-full flex items-center justify-center z-10 perspective-1000">
         
+        {/* Navigation Arrows (Side) */}
+        <button 
+          onClick={prevPlanet}
+          className="absolute left-4 sm:left-12 z-40 w-14 h-14 rounded-full border border-white/10 bg-black/30 backdrop-blur-md flex items-center justify-center hover:bg-white/10 hover:border-white/30 transition-all text-white/70 hover:text-white hover:scale-110"
+        >
+          <ChevronLeft className="w-8 h-8 -ml-1" />
+        </button>
+
+        <button 
+          onClick={nextPlanet}
+          className="absolute right-4 sm:right-12 z-40 w-14 h-14 rounded-full border border-white/10 bg-black/30 backdrop-blur-md flex items-center justify-center hover:bg-white/10 hover:border-white/30 transition-all text-white/70 hover:text-white hover:scale-110"
+        >
+          <ChevronRight className="w-8 h-8 -mr-1" />
+        </button>
+
         <AnimatePresence mode="popLayout">
           {companions.map((comp, idx) => {
             // Calculate relative position (-1, 0, 1) or out of bounds
@@ -76,14 +87,12 @@ const DashboardPage = () => {
             if (Math.abs(relativeIndex) > 2) return null;
 
             const isCenter = relativeIndex === 0;
-            const isLeft = relativeIndex < 0;
-            const isRight = relativeIndex > 0;
             
             // Scale and positioning based on distance from center
-            const xOffset = relativeIndex * 250; // Distance between planets
+            const xOffset = relativeIndex * (window.innerWidth < 640 ? 150 : 300); // Distance between planets responsive
             const scale = isCenter ? 1 : Math.max(0.4, 1 - Math.abs(relativeIndex) * 0.3);
             const zIndex = isCenter ? 30 : 20 - Math.abs(relativeIndex);
-            const opacity = isCenter ? 1 : Math.max(0.2, 1 - Math.abs(relativeIndex) * 0.4);
+            const opacity = isCenter ? 1 : Math.max(0.2, 1 - Math.abs(relativeIndex) * 0.5);
 
             return (
               <motion.div
@@ -101,25 +110,22 @@ const DashboardPage = () => {
               >
                 {/* The Planet Orb */}
                 <div 
-                  className={`relative rounded-full shadow-[0_0_80px_rgba(0,0,0,0.5)] flex items-center justify-center overflow-hidden transition-all duration-500`}
+                  className={`relative rounded-full shadow-[0_0_80px_rgba(0,0,0,0.5)] flex items-center justify-center overflow-hidden transition-all duration-500 mb-8`}
                   style={{ 
-                    width: isCenter ? '280px' : '160px', 
-                    height: isCenter ? '280px' : '160px',
+                    width: isCenter ? '240px' : '140px', 
+                    height: isCenter ? '240px' : '140px',
                     background: comp.planetGradient,
                     boxShadow: isCenter ? `0 0 100px ${comp.planetGradient.split(',')[1].trim()}` : '0 0 20px rgba(0,0,0,0.5)'
                   }}
                 >
-                  {/* Inner glow/texture */}
                   <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+CgkJPGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMSIgZmlsbD0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjA1KSIvPgoJPC9zdmc+')] mix-blend-overlay opacity-50" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
-                  
-                  {/* Emoji / Icon */}
-                  <span className={`relative z-10 drop-shadow-2xl ${isCenter ? 'text-7xl' : 'text-4xl'}`}>
+                  <span className={`relative z-10 drop-shadow-2xl transition-all duration-500 ${isCenter ? 'text-7xl scale-125' : 'text-4xl'}`}>
                     {comp.emoji}
                   </span>
                 </div>
 
-                {/* Planet Info (Only show if centered) */}
+                {/* Planet Info */}
                 <AnimatePresence>
                   {isCenter && (
                     <motion.div
@@ -127,12 +133,12 @@ const DashboardPage = () => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
                       transition={{ delay: 0.2 }}
-                      className="absolute top-full mt-10 w-80 text-center"
+                      className="absolute top-[260px] w-[90vw] sm:w-[400px] text-center pointer-events-auto"
                     >
-                      <h2 className="text-4xl font-bold tracking-tight mb-3 text-white drop-shadow-lg">
+                      <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-3 text-white drop-shadow-lg">
                         {comp.name}
                       </h2>
-                      <p className="text-slate-300 font-light leading-relaxed mb-6">
+                      <p className="text-sm sm:text-base text-white/80 font-light leading-relaxed mb-6 px-4">
                         {comp.description}
                       </p>
                       <Link 
@@ -149,31 +155,16 @@ const DashboardPage = () => {
             );
           })}
         </AnimatePresence>
-
       </div>
 
-      {/* Navigation Arrows */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex items-center space-x-12 z-30">
-        <button 
-          onClick={prevPlanet}
-          className="w-14 h-14 rounded-full border border-slate-700 bg-black/50 backdrop-blur-md flex items-center justify-center hover:bg-white/10 hover:border-white/30 transition-all text-white/70 hover:text-white"
-        >
-          <ChevronLeft className="w-6 h-6 -ml-1" />
-        </button>
-        <div className="flex space-x-2">
-          {companions.map((_, i) => (
-            <div 
-              key={`dot-${i}`}
-              className={`h-1.5 rounded-full transition-all duration-300 ${i === activeIndex ? 'w-6 bg-white' : 'w-1.5 bg-white/20'}`}
-            />
-          ))}
-        </div>
-        <button 
-          onClick={nextPlanet}
-          className="w-14 h-14 rounded-full border border-slate-700 bg-black/50 backdrop-blur-md flex items-center justify-center hover:bg-white/10 hover:border-white/30 transition-all text-white/70 hover:text-white"
-        >
-          <ChevronRight className="w-6 h-6 -mr-1" />
-        </button>
+      {/* Navigation Indicators */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-2 z-30">
+        {companions.map((_, i) => (
+          <div 
+            key={`dot-${i}`}
+            className={`h-1.5 rounded-full transition-all duration-300 ${i === activeIndex ? 'w-6 bg-white shadow-[0_0_10px_white]' : 'w-1.5 bg-white/20'}`}
+          />
+        ))}
       </div>
 
     </div>

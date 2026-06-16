@@ -50,13 +50,13 @@ const ChatPage = () => {
   };
 
   return (
-    <div className={`relative min-h-screen pt-20 flex flex-col bg-gradient-to-br ${companion.bgTheme} text-slate-50 font-sans selection:bg-white/30 selection:text-white transition-colors duration-1000`}>
+    <div className={`relative min-h-screen flex flex-col bg-gradient-to-br ${companion.bgTheme} text-slate-50 font-sans selection:bg-white/30 selection:text-white transition-colors duration-1000`}>
       
       {/* Background Starry Ambience */}
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+CgkJPGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMSIgZmlsbD0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjA1KSIvPgoJPC9zdmc+')] [mask-image:radial-gradient(ellipse_at_center,black,transparent_80%)] opacity-30 pointer-events-none" />
 
       {/* Top Navigation Bar */}
-      <div className="bg-[#0b1121]/50 backdrop-blur-xl border-b border-white/10 sticky top-16 z-20 px-4 py-3 flex items-center justify-between">
+      <div className="bg-[#0b1121]/50 backdrop-blur-xl border-b border-white/10 sticky top-0 z-20 px-4 py-3 flex items-center justify-between">
         <div className="flex items-center space-x-4">
           <Link to="/dashboard" className="p-2 hover:bg-white/10 rounded-full transition-colors">
             <ArrowLeft className="w-5 h-5 text-white/70 hover:text-white" />
