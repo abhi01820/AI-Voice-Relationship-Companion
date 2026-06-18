@@ -52,9 +52,14 @@ const DashboardPage = () => {
           <span>Exit Interface</span>
         </Link>
         
-        <div className="text-right pointer-events-none hidden sm:block">
+        <div className="text-right pointer-events-auto hidden sm:flex flex-col items-end">
           <p className="text-sm font-mono tracking-widest uppercase opacity-60">System Core</p>
-          <p className="font-bold tracking-widest">AWAITING CONNECTION</p>
+          <div className="flex items-center space-x-4 mt-1">
+            <Link to="/avatar" className="text-xs font-mono tracking-widest uppercase text-cyan-400 hover:text-cyan-300 transition-colors bg-cyan-900/30 px-3 py-1 rounded-full border border-cyan-500/30">
+              Test Avatar
+            </Link>
+            <p className="font-bold tracking-widest">AWAITING CONNECTION</p>
+          </div>
         </div>
       </div>
 
