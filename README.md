@@ -48,3 +48,5 @@ Instead, it acts as a crucial *first support step* for those who are currently t
 ### 💻 Tech Stack
 - **Frontend:** React, Vite, Tailwind CSS v4, Framer Motion
 - **Icons:** Lucide React
+
+
